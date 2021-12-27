@@ -33,10 +33,13 @@ while game_is_on:
         print("bounce")
 
     # detect collision with r_paddle
-    if ball.distance(r_paddle) <= 50 and ball.xcor() >= 340:
+    if (ball.distance(r_paddle) <= 50 and ball.xcor() >= 340) or (
+            ball.distance(l_paddle) <= 50 and ball.xcor() <= -340):
         ball.bounce_x()
         print("contact")
 
-
+    # if ball.distance(l_paddle) <= 50 and ball.xcor() <= -340:
+    #     ball.bounce_x()
+    #     print("contact")
 
 screen.exitonclick()
